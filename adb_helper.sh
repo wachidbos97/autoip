@@ -1,7 +1,7 @@
 #!/bin/sh
 
 function adb_ping() {
-    ping -c 1 $1 > /dev/null 2>&1
+    adb shell ping -c 1 $1 > /dev/null 2>&1
     return $?
 }
 
