@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Tentukan jalur dasar di mana skrip dan file konfigurasi berada
-BASE_DIR="/usr/local/bin/autoip"
+BASE_DIR="/usr/bin/autoip"
 
 # Memuat fungsi dan konfigurasi menggunakan jalur absolut
 source "$BASE_DIR/config.sh"
