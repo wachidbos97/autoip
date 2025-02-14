@@ -8,17 +8,16 @@ source "$BASE_DIR/config.sh"
 source "$BASE_DIR/logger.sh"
 
 function start_program() {
-    logger "Program mulai"
+    logger "Memulai program pemantauan"
     sh "$BASE_DIR/ping.sh" &
     PING_PID=$!
-    wait $PING_PID
-    logger "Program berhenti"
+    logger "Program pemantauan dijalankan dengan PID $PING_PID"
 }
 
 function stop_program() {
-    if [ -n "$PING_PID" ]; then
+    if [ -n "${PING_PID:-}" ]; then
         kill $PING_PID
-        logger "Program dihentikan"
+        logger "Program pemantauan dihentikan"
         unset PING_PID
     else
         echo "Program tidak berjalan."
@@ -53,8 +52,8 @@ function view_logs() {
 
 function display_status() {
     echo "=== Status Program ==="
-    if [ -n "$PING_PID" ]; then
-        echo "Status: Berjalan"
+    if [ -n "${PING_PID:-}" ]; then
+        echo "Status: Berjalan dengan PID $PING_PID"
     else
         echo "Status: Tidak Berjalan"
     fi
