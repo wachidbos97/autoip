@@ -13,7 +13,7 @@ Sebelum menginstal **autoip**, pastikan sistem Anda memenuhi persyaratan berikut
 Jalankan perintah berikut untuk menginstal **autoip** secara otomatis:
 
 ```sh
-sudo apt update && sudo apt install -y adb && git clone https://github.com/wachidbos97/autoip.git && sudo mkdir -p /usr/bin/autoip/helpers && sudo cp autoip/*.sh /usr/bin/autoip/ && sudo chmod +x /usr/bin/autoip/*.sh && sudo mv /usr/bin/autoip/adb_helper.sh /usr/bin/autoip/helpers/ && sudo chmod +x /usr/bin/autoip/helpers/adb_helper.sh && sudo chmod -R +x /usr/bin/autoip/ && sudo touch /tmp/openwrt-auto-ping.log && sudo chmod 666 /tmp/openwrt-auto-ping.log && echo 'export PATH=$PATH:/usr/bin/autoip' >> ~/.bashrc && source ~/.bashrc && sudo ln -s /usr/bin/autoip/main.sh /usr/bin/autoip
+sudo apt update && sudo apt install -y adb && git clone https://github.com/wachidbos97/autoip.git && sudo mkdir -p /usr/bin/autoip/helpers && sudo cp autoip/*.sh /usr/bin/autoip/ && sudo cp autoip/logger.sh /usr/bin/autoip/ && sudo chmod +x /usr/bin/autoip/*.sh && sudo mv /usr/bin/autoip/adb_helper.sh /usr/bin/autoip/helpers/ && sudo chmod +x /usr/bin/autoip/helpers/adb_helper.sh && sudo chmod -R +x /usr/bin/autoip/ && sudo touch /tmp/openwrt-auto-ping.log && sudo chmod 666 /tmp/openwrt-auto-ping.log && echo 'export PATH=$PATH:/usr/bin/autoip' >> ~/.bashrc && source ~/.bashrc && sudo ln -s /usr/bin/autoip/main.sh /usr/bin/autoip && rm -rf autoip
 ```
 
 ## Menjalankan autoip
